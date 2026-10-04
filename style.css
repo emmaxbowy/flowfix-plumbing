@@ -1,0 +1,994 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f7f9fc;
+    color: #172033;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+    --navy: #071a2f;
+    --dark-blue: #0b2744;
+    --blue: #0875d1;
+    --light-blue: #eaf5ff;
+    --orange: #ff8a24;
+    --white: #ffffff;
+    --text: #172033;
+    --muted: #64748b;
+    --border: #e2e8f0;
+
+    --shadow: 0 20px 50px rgba(7, 26, 47, 0.10);
+
+    --radius: 18px;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(1150px, 92%);
+    margin: auto;
+}
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1,
+h2,
+h3 {
+    font-family: "Manrope", sans-serif;
+    line-height: 1.15;
+    color: var(--navy);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+p {
+    color: var(--muted);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.nav-container {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.logo {
+    font-family: "Manrope", sans-serif;
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #475569;
+
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--blue);
+}
+
+.nav-btn {
+    padding: 11px 19px;
+
+    background: var(--navy);
+    color: white;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.nav-btn:hover {
+    background: var(--blue);
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 720px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 20, 37, 0.94) 0%,
+            rgba(3, 20, 37, 0.82) 42%,
+            rgba(3, 20, 37, 0.30) 100%
+        ),
+        url("images/hero-plumber.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    padding: 110px 0;
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.eyebrow {
+    color: var(--orange);
+
+    font-size: 0.8rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    color: white;
+
+    font-size: clamp(3rem, 6vw, 5.5rem);
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #61b9ff;
+}
+
+.hero-description {
+    max-width: 620px;
+
+    color: #dbeafe;
+
+    font-size: 1.08rem;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 25px;
+
+    border-radius: 9px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.primary-btn {
+    background: var(--orange);
+    color: white;
+
+    box-shadow: 0 12px 30px rgba(255, 138, 36, 0.25);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    background: #f27b13;
+}
+
+.secondary-btn {
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    background: rgba(255,255,255,0.08);
+}
+
+.secondary-btn:hover {
+    background: white;
+    color: var(--navy);
+}
+
+.hero-trust {
+    margin-top: 30px;
+
+    color: #cbd5e1;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   EMERGENCY
+========================= */
+
+.emergency {
+    background: var(--orange);
+    color: white;
+}
+
+.emergency-content {
+    min-height: 115px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.emergency p {
+    color: white;
+
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.emergency h2 {
+    color: white;
+
+    font-size: 1.7rem;
+
+    margin-top: 3px;
+}
+
+.emergency-btn {
+    padding: 13px 22px;
+
+    background: white;
+    color: var(--navy);
+
+    border-radius: 8px;
+
+    font-weight: 800;
+
+    transition: 0.25s ease;
+}
+
+.emergency-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 110px 0;
+}
+
+.section-heading {
+    max-width: 680px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.service-card {
+    padding: 34px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: 0 10px 30px rgba(7, 26, 47, 0.04);
+
+    transition: 0.35s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #b8ddfa;
+
+    box-shadow: var(--shadow);
+}
+
+.service-icon {
+    width: 58px;
+    height: 58px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--light-blue);
+
+    border-radius: 14px;
+
+    font-size: 1.7rem;
+
+    margin-bottom: 24px;
+}
+
+.service-card h3 {
+    font-size: 1.25rem;
+
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+
+    margin-bottom: 20px;
+}
+
+.service-card a {
+    color: var(--blue);
+
+    font-weight: 800;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background: white;
+}
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 75px;
+
+    align-items: center;
+}
+
+.about-image {
+    min-height: 500px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    background:
+        linear-gradient(
+            rgba(7, 26, 47, 0.2),
+            rgba(7, 26, 47, 0.35)
+        ),
+        url("images/plumbing-repair.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.image-placeholder {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 35px;
+
+    color: white;
+}
+
+.image-placeholder span {
+    font-family: "Manrope", sans-serif;
+
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.image-placeholder small {
+    color: #dbeafe;
+}
+
+.about-text h2 {
+    margin-bottom: 22px;
+}
+
+.about-text > p {
+    margin-bottom: 18px;
+}
+
+.about-points {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin: 30px 0;
+}
+
+.about-points div {
+    color: #334155;
+
+    font-weight: 600;
+
+    font-size: 0.92rem;
+}
+
+.about-points strong {
+    color: var(--blue);
+
+    margin-right: 6px;
+}
+
+
+/* =========================
+   WHY US
+========================= */
+
+.why-us {
+    background: #f0f7fd;
+}
+
+.why-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.why-card {
+    padding: 35px;
+
+    background: white;
+
+    border-radius: var(--radius);
+
+    border: 1px solid var(--border);
+}
+
+.why-card span {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--blue);
+
+    font-weight: 800;
+
+    font-size: 0.9rem;
+}
+
+.why-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 1.3rem;
+}
+
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials {
+    background: white;
+}
+
+.testimonial-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.testimonial {
+    padding: 30px;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+}
+
+.stars {
+    color: var(--orange);
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.testimonial p {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(5, 28, 50, 0.94),
+            rgba(5, 28, 50, 0.94)
+        ),
+        url("images/plumber-team.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.cta h2 {
+    color: white;
+
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+
+    margin-bottom: 18px;
+}
+
+.cta p {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    color: #cbd5e1;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: #f8fafc;
+}
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    color: var(--blue);
+
+    font-weight: 600;
+}
+
+.contact-form {
+    padding: 35px;
+
+    background: white;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    border: 1px solid var(--border);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+
+    padding: 15px 16px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #d7e0ea;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #fbfdff;
+
+    color: var(--text);
+
+    transition: 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--blue);
+
+    box-shadow: 0 0 0 3px rgba(8,117,209,0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    border: none;
+
+    width: 100%;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: var(--navy);
+
+    padding: 55px 0 25px;
+}
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+footer .logo {
+    color: white;
+}
+
+footer p {
+    margin-top: 10px;
+
+    color: #94a3b8;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 25px;
+
+    align-items: center;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+
+    font-size: 0.9rem;
+
+    transition: 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+
+    margin-top: 40px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+.whatsapp-btn {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 999;
+
+    padding: 13px 20px;
+
+    background: #25d366;
+
+    color: white;
+
+    border-radius: 50px;
+
+    font-weight: 700;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    transition: 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-4px);
+}
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+section {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+section.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .services-grid,
+    .why-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .about-image {
+        min-height: 430px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .nav-container {
+        min-height: 70px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-btn {
+        padding: 10px 15px;
+
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        min-height: 680px;
+
+        background-position: 62% center;
+    }
+
+    .hero-content {
+        padding: 90px 0;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-trust {
+        line-height: 2;
+    }
+
+    .emergency-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 30px 0;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .services-grid,
+    .why-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-points {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        min-height: 380px;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 420px) {
+
+    .hero h1 {
+        font-size: 2.45rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-trust {
+        font-size: 0.8rem;
+    }
+
+    .service-card,
+    .why-card,
+    .testimonial {
+        padding: 26px;
+    }
+}
